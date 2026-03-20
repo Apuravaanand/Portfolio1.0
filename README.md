@@ -78,7 +78,7 @@ portfolio/
 
 <pre>
 # Clone the repository
-git clone https://github.com/Apuravaanand/REPO_NAME.git
+git clone https://github.com/Apuravaanand/Portfolio1.0.git
 
 # Navigate to project
 cd REPO_NAME
