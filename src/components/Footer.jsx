@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, MessageSquare, Briefcase, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -21,7 +21,7 @@ export default function Footer() {
                     ease: "easeInOut"
                 }
             }}
-            className="relative bg-white text-gray-800 py-16 px-6 md:px-16 overflow-hidden rounded-t-3xl"
+            className="relative bg-black text-white-800 py-16 px-6 md:px-16 overflow-hidden"
         >
             {/* Soft background glows */}
             <div className="absolute w-64 h-64 blur-3xl rounded-full top-10 left-10 opacity-10 bg-green-400"></div>
@@ -36,8 +36,8 @@ export default function Footer() {
                     transition={{ duration: 0.6 }}
                     className="space-y-4"
                 >
-                    <h3 className="text-xl font-semibold text-green-600">About Me</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-xl font-semibold text-green-500">About Me</h3>
+                    <p className="text-gray-100">
                         I don’t just build websites — I engineer scalable web systems designed for growth, efficiency, and long-term impact.
                     </p>
                 </motion.div>
@@ -53,17 +53,17 @@ export default function Footer() {
 
                     <div className="flex items-center gap-3">
                         <Mail size={20} className="text-green-600" />
-                        <span className="text-gray-700">erapuravaanand@gmail.com</span>
+                        <span className="text-gray-100">erapuravaanand@gmail.com</span>
                     </div>
 
                     <div className="flex items-center gap-3">
                         <Phone size={20} className="text-green-600" />
-                        <span className="text-gray-700">+91 xxxxxxxxxx</span>
+                        <span className="text-gray-100">+91 7903299186</span>
                     </div>
 
                     <div className="flex items-center gap-3">
                         <MapPin size={20} className="text-green-600" />
-                        <span className="text-gray-700">Guwahati, India</span>
+                        <span className="text-gray-100">Guwahati, India</span>
                     </div>
                 </motion.div>
 
@@ -78,28 +78,39 @@ export default function Footer() {
 
                     <div className="flex gap-6 mt-2">
                         <a
-                            href="https://github.com/Apuravaanand/"
+                            href="https://www.instagram.com/apurava__/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-700 hover:text-green-600 transition hover:scale-110"
+                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
                         >
-                            <Github size={22} />
+                            <Instagram size={22} />
+                        </a>
+
+                        <a
+                            href="https://www.fiverr.com/s/jjBE1p9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
+                        >
+                            <Briefcase size={22} />
                         </a>
 
                         <a
                             href="https://www.linkedin.com/in/apurava-anand-/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-700 hover:text-green-600 transition hover:scale-110"
+                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
                         >
                             <Linkedin size={22} />
                         </a>
 
                         <a
-                            href="mailto:erapuravaanand@gmail.com"
-                            className="text-gray-700 hover:text-green-600 transition hover:scale-110"
+                            href="https://discord.gg/hthSU6nT"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
                         >
-                            <Mail size={22} />
+                            <MessageSquare size={22} />
                         </a>
                     </div>
                 </motion.div>
