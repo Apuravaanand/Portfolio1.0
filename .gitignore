@@ -1,4 +1,6 @@
-# Logs
+# =========================
+# LOGS
+# =========================
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,119 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# =========================
+# NODE MODULES
+# =========================
+node_modules/
+jspm_packages/
 
-# Editor directories and files
+# =========================
+# BUILD OUTPUTS
+# =========================
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+coverage/
+
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# DATABASE
+# =========================
+*.sqlite
+*.sqlite3
+*.db
+
+# MongoDB dump files
+dump/
+*.bson
+*.json
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# EDITOR / IDE
+# =========================
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+
+# =========================
+# TESTING
+# =========================
+coverage/
+.nyc_output/
+
+# =========================
+# FRONTEND (React / Vite / CRA)
+# =========================
+node_modules/
+build/
+dist/
+.cache/
+.vite/
+*.local
+
+# =========================
+# BACKEND (Express)
+# =========================
+uploads/
+tmp/
+temp/
+
+# =========================
+# FILE STORAGE / USER DATA
+# =========================
+public/uploads/
+public/images/
+storage/
+
+# =========================
+# SECURITY
+# =========================
+*.pem
+*.key
+*.crt
+
+# =========================
+# DOCKER
+# =========================
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# =========================
+# MISC
+# =========================
+*.tgz
+*.gz
+*.zip
+
+# =========================
+# OPTIONAL: LOCK FILES (uncomment if needed)
+# =========================
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
