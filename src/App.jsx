@@ -2,34 +2,26 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
-import AquaticCursor from "./components/AquaticCursor.jsx";
-import BlackThreadCursor from "./components/AquaticCursor.jsx";
-import GreenDotCursor from "./components/AquaticCursor.jsx";
-import ProjectPage from "./pages/ProjectPage.jsx";
-import ServicesPage from "./pages/ServicesPage.jsx";
+import ProjectPage from "./pages/ProjectPage";
+import ServicesPage from "./pages/ServicesPage";
+
+// Only import the cursor you are actually using to keep the bundle small
+import GreenDotCursor from "./components/AquaticCursor";
 
 const App = () => {
   return (
     <Router>
-      {/* 
-          Placed here, the cursor persists across all page transitions.
-          It will "swim" over your White BG pages and dark theme sections alike.
-      */}
-      {/* <AquaticCursor /> */}
-      {/* <BlackThreadCursor/> */}
-      <GreenDotCursor/>
-
+      {/* Persistant Cursor Component */}
+      <GreenDotCursor />
       <Routes>
-        {/* Landing Page Route */}
         <Route path="/home" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/project" element={<ProjectPage />} />
-        <Route path="/service" element={<ServicesPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
-        {/* Redirects */}
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </Router>
   );
