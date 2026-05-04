@@ -12,11 +12,10 @@ const projects = [
     { id: 'project4', name: 'Auth Protocol', tech: ['Firebase'], imgCount: 3, desc: 'Biometric encryption layer.' }
 ];
 
-const ProjectSection = () => {
+const Projects = () => {
     const [activeFile, setActiveFile] = useState(projects[0]);
     const suffixes = ['a', 'b', 'c', 'd'];
 
-    // Resolves image from the eager-loaded glob object
     const getImagePath = (id, suffix) => {
         const path = `../assets/${id}_${suffix}.png`;
         return images[path]?.default || '';
@@ -181,4 +180,4 @@ const ProjectSection = () => {
     );
 };
 
-export default ProjectSection;
+export default Projects;
