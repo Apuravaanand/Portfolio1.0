@@ -123,5 +123,9 @@ docker-compose*.yml
 # =========================
 # package-lock.json
 # yarn.lock
+<<<<<<< HEAD
 # pnpm-lock.yaml
 
+=======
+# pnpm-lock.yaml
+>>>>>>> 71ef615 (adding services)
