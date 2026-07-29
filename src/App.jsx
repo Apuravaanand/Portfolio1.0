@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       {/* Persistant Cursor Component */}
-      <GreenDotCursor />
+      {/* <GreenDotCursor /> */}
       <Routes>
         <Route path="/home" element={<LandingPage />} />
         <Route path="/about" element={<About />} />

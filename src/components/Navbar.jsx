@@ -20,7 +20,7 @@ export default function Navbar() {
             <div className="hidden md:block fixed left-8 top-1/2 -translate-y-1/2 z-[100]">
                 {/* Removed radial-gradient background dots */}
                 <div className="flex flex-col items-center gap-4 p-3 bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl relative">
-                    
+
                     {links.map((item) => (
                         <motion.a
                             key={item.name}
@@ -61,7 +61,7 @@ export default function Navbar() {
             </div>
 
             {/* MOBILE TRIGGER */}
-            <div className="md:hidden fixed top-6 right-6 z-[100]">
+            <div className="md:hidden fixed top-3 right-3 z-[100]">
                 <motion.button
                     onClick={() => setIsOpen(!isOpen)}
                     whileTap={{ scale: 0.9 }}
@@ -80,10 +80,10 @@ export default function Navbar() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[90] bg-black flex flex-col items-center justify-center overflow-hidden"
+                        className="fixed inset-0 z-[90] bg-gray-100 flex flex-col items-center justify-center overflow-hidden"
                     >
                         {/* Removed background grid dots/lines */}
-                        <nav className="relative z-10 flex flex-col items-start gap-8">
+                        <nav className="relative z-10 flex flex-col items-start gap-14">
                             {links.map((item, index) => (
                                 <motion.a
                                     key={item.name}
@@ -94,15 +94,15 @@ export default function Navbar() {
                                     onClick={() => setIsOpen(false)}
                                     className="group flex items-center gap-6"
                                 >
-                                    <span className="font-mono text-white/20 text-sm">/0{index + 1}</span>
-                                    <h2 className="text-6xl sm:text-8xl font-black uppercase italic tracking-tighter text-white/10 group-hover:text-white transition-all duration-500 leading-none">
+                                    {/* <span className="font-mono text-black text-sm">/0{index + 1}</span> */}
+                                    <h2 className="text-6xl sm:text-8xl font-black uppercase italic tracking-tighter text-black group-hover:text-white transition-all duration-500 leading-none">
                                         {item.name}
                                     </h2>
                                 </motion.a>
                             ))}
                         </nav>
-                        
-                       
+
+
                     </motion.div>
                 )}
             </AnimatePresence>
