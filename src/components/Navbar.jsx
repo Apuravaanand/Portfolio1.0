@@ -19,7 +19,7 @@ export default function Navbar() {
             {/* DESKTOP VERTICAL DOCK */}
             <div className="hidden md:block fixed left-8 top-1/2 -translate-y-1/2 z-[100]">
                 {/* Removed radial-gradient background dots */}
-                <div className="flex flex-col items-center gap-4 p-3 bg-black/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl relative">
+                <div className="flex flex-col items-center gap-4 p-3 bg-gray-400 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl relative">
 
                     {links.map((item) => (
                         <motion.a

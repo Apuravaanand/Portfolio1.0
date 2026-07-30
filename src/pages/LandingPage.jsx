@@ -7,6 +7,7 @@ import Service from '../components/Service'
 import Achievements from '../components/Achievements'
 import TelegramContact from '../components/TelegramContact'
 import DevStickers from '../components/DevStickers'
+import ApproachSection from '../components/ApproachSection'
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage = () => {
       <Landing />
       <Achievements />
       <Service />
+      <ApproachSection />
       <TelegramContact />
       <Footer />
       {/* <DevStickers/> */}

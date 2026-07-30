@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 
 const stats = [
-  { id: 1, title: "Projects Built (MERN)", value: 8 },
-  { id: 2, title: "API Endpoints Developed", value: 45 },
-  { id: 3, title: "Database Optimizations", value: 12 },
-  { id: 4, title: "Months Experience", value: 24 },
+  { id: 1, title: "Software Projects Delivered", value: "10+" },
+  { id: 2, title: "Business Solutions Built", value: "8+" },
+  { id: 3, title: "Technologies & Frameworks", value: "15+" },
+  { id: 4, title: "Client-Focused Development", value: "2+" },
 ];
 
 export default function Achievements() {

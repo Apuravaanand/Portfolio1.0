@@ -7,31 +7,47 @@ const Service = () => {
         {
             number: "01",
             icon: <Globe className="text-green-500" size={24} />,
-            title: "Full Stack MERN Applications",
-            desc: "End-to-end development of dynamic web apps using MongoDB, Express, React, and Node.js.",
-            points: ["Custom SaaS Platforms", "Admin Dashboards", "E-commerce Solutions"]
+            title: "Custom Business Software",
+            desc: "Tailor-made web applications designed to streamline operations, improve productivity, and support business growth.",
+            points: [
+                "Business Management Systems",
+                "Internal Dashboards",
+                "Workflow Automation",
+            ],
         },
         {
             number: "02",
             icon: <ShieldCheck className="text-green-500" size={24} />,
-            title: "Professional Portfolios",
-            desc: "High-end digital identities with dark themes and glassmorphism UI.",
-            points: ["Developer Identity Kits", "Interactive Showcases", "Landing Posters"]
+            title: "SaaS & Digital Product Development",
+            desc: "Build scalable SaaS platforms and digital products from idea to launch with a focus on performance and future growth.",
+            points: [
+                "MVP Development",
+                "Multi-Tenant SaaS",
+                "Product Scaling",
+            ],
         },
         {
             number: "03",
             icon: <Database className="text-green-500" size={24} />,
-            title: "Backend & API Architecture",
-            desc: "Secure, scalable server-side systems with optimized database logic.",
-            points: ["JWT & OAuth Security", "RESTful API Design", "DB Optimization"]
+            title: "Backend Systems & API Integration",
+            desc: "Develop secure backend infrastructure and connect your software with third-party services for seamless business operations.",
+            points: [
+                "Custom APIs",
+                "Third-Party Integrations",
+                "Cloud Infrastructure",
+            ],
         },
         {
             number: "04",
             icon: <Briefcase className="text-green-500" size={24} />,
-            title: "Business & Enterprise Sites",
-            desc: "Tech-forward websites designed for corporate scalability and high conversion.",
-            points: ["CMS Integration", "Scalable Architecture", "SEO Optimization"]
-        }
+            title: "Enterprise & Corporate Solutions",
+            desc: "Modern software solutions for organizations requiring reliable, scalable, and maintainable business applications.",
+            points: [
+                "Enterprise Portals",
+                "Client & Employee Portals",
+                "Business Process Automation",
+            ],
+        },
     ];
 
     return (
@@ -55,8 +71,8 @@ const Service = () => {
                             Digital <br />
                             <span className="text-green-600 italic">Architecture</span>
                         </h2>
-                        <p className="text-gray-400 text-base md:text-lg max-w-sm mx-auto lg:mx-0">
-                            Engineering production-ready MERN solutions with a focus on security and scalability.
+                        <p className="text-gray-400 text-base md:text-lg max-w-sm mx-auto lg:mx-0 text-justify">
+                            Engineering scalable software solutions that help businesses streamline operations, accelerate growth, and build with confidence.
                         </p>
                         <div className="h-1.5 w-16 md:w-20 bg-green-500 rounded-full mx-auto lg:mx-0" />
                     </div>

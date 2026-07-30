@@ -62,12 +62,12 @@ export default function Landing() {
                     </div>
                 ) : (
                     /* Main Content */
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full mb-8">
                         <div className="text-center md:text-left mt-10 space-y-4">
                             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
                                 Building <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Scalable Digital</span> Solutions
                             </h1>
-                            <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto md:mx-0 leading-relaxed text-justify">
                                 Turn your idea into a reliable product with modern full-stack development.
                                 I create scalable MERN applications, secure backend APIs, and responsive
                                 user experiences focused on performance, quality, and long-term growth.
