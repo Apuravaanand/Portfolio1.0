@@ -11,8 +11,8 @@ const About = () => {
             <Navbar />
             <About_first />
             <About_sec />
-            <Tech_Fall/>
-            <Footer/>
+            <Tech_Fall />
+            <Footer />
         </div>
     )
 }

@@ -69,7 +69,7 @@ export default function Landing() {
                             </h1>
                             <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto md:mx-0 leading-relaxed text-justify">
                                 Turn your idea into a reliable product with modern full-stack development.
-                                I create scalable MERN applications, secure backend APIs, and responsive
+                                I create scalable end-to-end applications, secure backend APIs, and responsive
                                 user experiences focused on performance, quality, and long-term growth.
                             </p>
                             <div className="flex flex-wrap gap-4 mt-10 justify-center md:justify-start">

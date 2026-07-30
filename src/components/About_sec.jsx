@@ -4,33 +4,33 @@ import { GraduationCap, Code2, Cpu, Cloud, Layers } from 'lucide-react';
 const About_sec = () => {
     const educationData = [
         {
-            title: "Bachelor of Technology",
-            major: "Electronic & Communication Engineering",
-            status: "Core Academic Foundation",
-            icon: <GraduationCap className="text-green-500" size={24} />
-        },
-        {
-            title: "MERN Stack Architecture",
-            major: "Full-Stack Development Specialist",
-            status: "Professional Certification",
+            title: "Frontend Engineering",
+            major: "React.js | Next.js | JavaScript | Responsive Interfaces",
+            status: "User Experience & Performance",
             icon: <Code2 className="text-green-500" size={24} />
         },
         {
-            title: "Frontend Engineer",
-            major: "React | Next.js Developer",
-            status: "Specialized Training",
+            title: "Backend Development",
+            major: "Node.js | Express.js | GraphQL | REST APIs",
+            status: "Scalable Server Architecture",
             icon: <Cpu className="text-green-500" size={24} />
         },
         {
-            title: "Cloud & DevOps Integration",
-            major: "AWS | Docker | CI/CD Pipelines",
-            status: "Infrastructure Mastery",
+            title: "Database Engineering",
+            major: "MongoDB | SQL | MySQL Workbench",
+            status: "Data Modeling & Optimization",
+            icon: <GraduationCap className="text-green-500" size={24} />
+        },
+        {
+            title: "Automation & Integration",
+            major: "Python | API Integration | Postman | Workflow Automation",
+            status: "Business Process Automation",
             icon: <Cloud className="text-green-500" size={24} />
         },
         {
-            title: "UI/UX & Product Design",
-            major: "Figma | Design Systems",
-            status: "Creative Implementation",
+            title: "Software Architecture",
+            major: "Scalable Systems | Clean Architecture | DSA (C++)",
+            status: "Enterprise Engineering Practices",
             icon: <Layers className="text-green-500" size={24} />
         }
     ];
@@ -54,19 +54,21 @@ const About_sec = () => {
                 {/* Left Side: Section Label */}
                 <div className="lg:col-span-4 relative">
                     <div className="sticky top-48">
-                        {/* Background Watermark */}
                         <h2 className="text-9xl font-black text-black/5 absolute -top-16 -left-4 select-none leading-none z-0">
-                            ED_U
+                            SKILLS
                         </h2>
 
                         <div className="relative z-10">
-                            <h3 className="text-4xl md:text-5xl font-black text-black uppercase italic leading-tight">
-                                Academic <br />
-                                <span className="text-green-600">Evolution</span>
+                            <h3 className="text-4xl md:text-5xl font-black text-black uppercase leading-tight">
+                                Engineering <br />
+                                <span className="text-green-600">Capabilities</span>
                             </h3>
+
                             <div className="w-16 h-2 bg-black mt-4 shadow-[4px_4px_0px_rgba(34,197,94,1)]" />
+
                             <p className="text-zinc-600 mt-10 font-medium leading-relaxed max-w-xs border-l-2 border-green-500/30 pl-4">
-                                Bridging the gap between hardware logic and modern web architecture.
+                                Modern technologies and engineering practices used to deliver scalable,
+                                secure, and business-focused software solutions.
                             </p>
                         </div>
                     </div>

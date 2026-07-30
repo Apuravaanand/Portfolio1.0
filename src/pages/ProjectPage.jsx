@@ -7,9 +7,9 @@ import Projects from '../components/Projects'
 const ProjectPage = () => {
   return (
     <div>
-      <Navbar/>
-      <Projects/>
-      <Footer/>
+      <Navbar />
+      {/* <Projects/> */}
+      <Footer />
     </div>
   )
 }

@@ -1,72 +1,117 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
 
-// Asset Imports
-import html from '../assets/html.jpg';
-import js from '../assets/js.jpg';
-import css from '../assets/css.jpg';
-import php from '../assets/php.jpg';
-import fivrr from '../assets/fivrr.jpg';
-import postman from '../assets/postmans.jpg';
-import react from '../assets/react.jpg';
-import node from '../assets/node.jpg'; // New
-import py from '../assets/py.jpg';     // New
-import rocket from '../assets/rocket.jpg'; // New
-import alian from '../assets/alian.jpg';
-import alian1 from '../assets/alian1.jpg';
+import html from "../assets/html.jpg";
+import js from "../assets/js.jpg";
+import css from "../assets/css.jpg";
+import php from "../assets/php.jpg";
+import fivrr from "../assets/fivrr.jpg";
+import postman from "../assets/postmans.jpg";
+import react from "../assets/react.jpg";
+import node from "../assets/node.jpg";
+import py from "../assets/py.jpg";
+import terraform from "../assets/Terraform.jpg";
+import AI_img from "../assets/AI_img.jpg";
+import Graphql from "../assets/Graphql.jpg";
+import NextJS from "../assets/NextJS.jpg";
+import AWS from "../assets/AWS.jpg";
 
+const techStack = [
+  { name: "AWS", icon: AWS },
+  { name: "React", icon: react },
+  { name: "Node.js", icon: node },
+  { name: "Graphql", icon: Graphql },
+  { name: "JavaScript", icon: js },
+  { name: "Python", icon: py },
+  { name: "Postman", icon: postman },
+  { name: "PHP", icon: php },
+  { name: "NextJS", icon: NextJS },
+  { name: "HTML5", icon: html },
+  { name: "CSS3", icon: css },
+  { name: "Fiverr", icon: fivrr },
+  { name: "Terraform", icon: terraform },
+  { name: "AI", icon: AI_img },
+];
 
-const FallingSticker = ({ src, name, delay }) => {
-  // Use state to generate random position only on mount to prevent hydration mismatch
-  const [position, setPosition] = useState(0);
-  
-  useEffect(() => {
-    setPosition(Math.random() * 90 + 5); // 5% to 95% width
-  }, []);
+// Duplicate for infinite loop
+const slider = [...techStack, ...techStack];
 
+export default function Tech_Fall() {
   return (
-    <motion.div
-      className="absolute flex flex-col items-center"
-      style={{ left: `${position}%` }}
-      initial={{ y: -180 }}
-      animate={{ y: '80vh' }}
-      transition={{
-        duration: 2 + Math.random() * 6, // Random speed (6s to 12s)
-        repeat: Infinity,
-        ease: "linear",
-        delay: delay,
-        repeatDelay: 0
-      }}
-    >
-      <img src={src} alt={name} className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-lg" />
-      <span className="mt-2 text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest">{name}</span>
-    </motion.div>
-  );
-};
+    <section className="relative py-16 bg-white overflow-hidden border-y border-gray-200">
 
-const Tech_Fall = () => {
-  const allTech = [
-    { name: "React", icon: react }, { name: "Node.js", icon: node },
-    { name: "Postman", icon: postman }, { name: "JavaScript", icon: js },
-    { name: "Python", icon: py }, { name: "PHP", icon: php },
-    { name: "Fiverr", icon: fivrr }, { name: "HTML", icon: html },
-    { name: "CSS", icon: css }
-  ];
+      <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
+        <p className="uppercase tracking-[0.3em] text-xs font-bold text-green-600">
+          TECHNOLOGY STACK
+        </p>
 
-  return (
-    <section className="relative w-full h-[600px] bg-white overflow-hidden">
+        <h2 className="mt-3 text-4xl md:text-5xl font-black text-gray-900">
+          Technologies I Work With
+        </h2>
 
-      {/* Randomized Rain */}
-      {allTech.map((tech, i) => (
-        <FallingSticker 
-          key={tech.name} 
-          src={tech.icon} 
-          name={tech.name} 
-          delay={i * 5} // Staggered start times
-        />
-      ))}
+        <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          Modern technologies used to build scalable software, web applications,
+          APIs, and business systems.
+        </p>
+      </div>
+
+      {/* Fade */}
+      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent z-20" />
+      <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent z-20" />
+
+      <div className="overflow-hidden">
+
+        <div className="flex w-max animate-marquee">
+
+          {slider.map((tech, index) => (
+            <div
+              key={index}
+              className="mx-4 md:mx-6 flex-shrink-0"
+            >
+              <div className="w-32 md:w-40 h-32 md:h-40 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                />
+
+                <span className="mt-5 text-xs md:text-sm font-bold text-gray-700 uppercase tracking-wider">
+                  {tech.name}
+                </span>
+
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+
+      <style>{`
+        @keyframes marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee{
+          animation: marquee 28s linear infinite;
+        }
+
+        .animate-marquee:hover{
+          animation-play-state: paused;
+        }
+
+        @media (max-width:768px){
+          .animate-marquee{
+            animation-duration:18s;
+          }
+        }
+      `}</style>
+
     </section>
   );
-};
-
-export default Tech_Fall;
+}
