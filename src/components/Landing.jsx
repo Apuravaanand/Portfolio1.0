@@ -41,7 +41,7 @@ export default function Landing() {
     }, []);
 
     return (
-        <div className="w-screen h-screen overflow-hidden bg-[#fafafa] text-gray-900 font-sans flex flex-col">
+        <div className="min-h-screen w-full bg-[#fafafa] text-gray-900 font-sans flex flex-col overflow-x-hidden">
             <Navbar />
 
             {/* Fixed Background */}
