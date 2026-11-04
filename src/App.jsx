@@ -17,14 +17,14 @@ const App = () => {
       {/* Persistant Cursor Component */}
       {/* <GreenDotCursor /> */}
       <Routes>
-        <Route path="/home" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/service" element={<ServicesPage />} />
         <Route path="/private-policy" element={<Policy />} />
         <Route path="/contact" element={<ContactPage />} />
 
-        <Route path="/" element={<Navigate to="/home" replace />} />
+        {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}
         <Route path="*" element={<NotFound />} />
         {/* <Route path="*" element={<Navigate to="/home" replace />} /> */}
       </Routes>
