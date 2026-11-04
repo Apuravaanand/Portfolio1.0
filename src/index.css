@@ -25,13 +25,11 @@
 :root {
   font-family: "Audiowide", sans-serif;
   scroll-behavior: smooth;
-  /* REMOVED overflow-x: hidden here to prevent section overlap bugs */
 }
 
 body {
   font-family: "Audiowide", sans-serif;
   overflow-x: hidden;
-  /* Safe here on body */
   width: 100%;
 }
 
@@ -52,11 +50,14 @@ body {
   animation: modalOpen 0.3s ease-out;
 }
 
-
 /* =================================================== NETLIFY BADGE REMOVAL =================================================== */
 #netlify-badge,
 iframe[src*="netlify"],
+iframe[srcdoc*="Powered by Netlify"],
+iframe[aria-label*="Netlify"],
+[data-nl-ready="1"],
 a[href*="netlify.com/wt-tr"],
+div[style*="z-index: 2147483645"],
 div[style*="z-index: 99999"] {
   display: none !important;
   visibility: hidden !important;
