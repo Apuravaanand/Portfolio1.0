@@ -6,6 +6,7 @@ import {
     Workflow,
     Headphones,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const reasons = [
     {
@@ -105,9 +106,13 @@ export default function WhyChooseMe() {
                         reliable digital products.
                     </p>
 
-                    <button className="mt-8 px-8 py-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold uppercase tracking-widest transition-all text-sm cursor-pointer">
+                    <Link
+                        to="/contact"
+                        className="mt-8 px-8 py-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold uppercase tracking-widest transition-all text-sm cursor-pointer inline-block"
+                    >
                         Start a Project
-                    </button>
+                    </Link>
+
 
                 </div>
 
