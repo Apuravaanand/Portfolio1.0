@@ -52,12 +52,18 @@ body {
   animation: modalOpen 0.3s ease-out;
 }
 
-/* =================================================== NETLIFY FREE TIER BADGE HIDER =================================================== */
+
+/* =================================================== NETLIFY BADGE REMOVAL =================================================== */
 #netlify-badge,
 iframe[src*="netlify"],
-a[href*="netlify.com/wt-tr"] {
+a[href*="netlify.com/wt-tr"],
+div[style*="z-index: 99999"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  position: absolute !important;
 }

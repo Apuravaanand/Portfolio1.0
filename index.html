@@ -102,6 +102,23 @@
   <div id="root"></div>
 
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    // Instantly strip out the Netlify badge on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const removeBadge = () => {
+        const badge = document.getElementById('netlify-badge') ||
+          document.querySelector('iframe[src*="netlify"]') ||
+          document.querySelector('a[href*="netlify.com/wt-tr"]');
+        if (badge) {
+          badge.remove();
+        }
+      };
+      removeBadge();
+      // Run a couple of times in case Netlify injects it asynchronously
+      setTimeout(removeBadge, 500);
+      setTimeout(removeBadge, 1500);
+    });
+  </script>
 
 </body>
 
