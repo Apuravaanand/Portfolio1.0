@@ -31,9 +31,10 @@ export default function Achievements() {
     >
       <div className="absolute top-0 right-0 w-1/3 h-full bg-green-500/5 skew-x-12 translate-x-24 -z-10 hidden lg:block" />
 
-      {/* Responsive padding: pl-0 on mobile, md:pl-28/lg:pl-24 to clear fixed navbar dock on desktop */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pl-0 md:pl-28 lg:pl-24 relative z-10 w-full">
+      {/* Responsive container padding to account for layout structure */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 md:pl-28 lg:pl-24 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+
           {/* Text Content */}
           <motion.div
             variants={container}
@@ -49,7 +50,7 @@ export default function Achievements() {
               Engineering <br className="hidden sm:block" />
               <span className="text-green-600 italic">Impact</span>
             </motion.h2>
-            <motion.p variants={item} className="text-gray-500 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg leading-relaxed">
+            <motion.p variants={item} className="text-gray-600 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg leading-relaxed">
               Scaling digital products isn't just about code—it's about measurable efficiency.
             </motion.p>
             <motion.div variants={item} className="flex justify-center lg:justify-start">
@@ -57,12 +58,13 @@ export default function Achievements() {
             </motion.div>
           </motion.div>
 
-          {/* Stats Grid */}
+          {/* Stats Grid - Fully responsive with proper gaps for mobile */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full min-w-0">
             {stats.map((stat, index) => (
               <StatCard key={stat.id} title={stat.title} value={stat.value} index={index} />
             ))}
           </div>
+
         </div>
       </div>
 
@@ -98,17 +100,18 @@ function StatCard({ title, value, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="relative group p-5 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white border border-gray-600/50 shadow-sm hover:shadow-xl transition-all duration-300 w-full min-w-0"
+      className="relative group p-6 sm:p-7 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white border border-gray-300 shadow-sm hover:shadow-xl transition-all duration-300 w-full min-w-0 flex flex-col justify-center"
     >
-      <div className="absolute -top-2 -right-2 text-green-500/5 group-hover:text-green-500/10 transition-colors pointer-events-none">
-        <svg width="70" height="70" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+      <div className="absolute top-3 right-3 text-green-500/5 group-hover:text-green-500/10 transition-colors pointer-events-none">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
       </div>
-      <div className="relative z-10 text-center sm:text-left">
-        <motion.span className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter block truncate">
+      <div className="relative z-15 text-center sm:text-left">
+        <motion.span className="text-4xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter block">
           <Counter node={displayValue} />
           <span className="text-green-500">+</span>
         </motion.span>
-        <p className="mt-2 text-gray-400 font-bold uppercase text-[9px] sm:text-[10px] tracking-[0.15em] leading-tight truncate">
+        {/* Removed strict truncation so text flows safely on small devices */}
+        <p className="mt-2 text-gray-500 font-bold uppercase text-[10px] sm:text-[11px] tracking-[0.12em] leading-relaxed break-words">
           {title}
         </p>
       </div>

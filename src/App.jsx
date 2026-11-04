@@ -9,6 +9,7 @@ import ServicesPage from "./pages/ServicesPage";
 import GreenDotCursor from "./components/AquaticCursor";
 import PrivacyPolicy from "./pages/Policy";
 import Policy from "./pages/Policy";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<NotFound />} />
         {/* <Route path="*" element={<Navigate to="/home" replace />} /> */}
       </Routes>
     </Router>

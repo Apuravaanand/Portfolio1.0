@@ -51,3 +51,13 @@ body {
 .animate-modalOpen {
   animation: modalOpen 0.3s ease-out;
 }
+
+/* =================================================== NETLIFY FREE TIER BADGE HIDER =================================================== */
+#netlify-badge,
+iframe[src*="netlify"],
+a[href*="netlify.com/wt-tr"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
