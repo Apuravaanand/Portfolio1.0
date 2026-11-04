@@ -1,7 +1,5 @@
 User-agent: *
-
 Allow: /
 
-Host: https://apurava.netlify.app
-
-Sitemap: https://apurava.netlify.app/sitemap.xml
+Host: https://vraks.netlify.app
+Sitemap: https://vraks.netlify.app/sitemap.xml
