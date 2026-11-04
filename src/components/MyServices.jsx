@@ -42,9 +42,9 @@ const reasons = [
 
 export default function WhyChooseMe() {
     return (
-        <section className="relative py-24 bg-white overflow-hidden">
-
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="relative py-24 bg-white overflow-hidden w-full">
+            {/* Symmetrical mobile padding (px-4), with desktop-only left offset for the navigation dock (md:pl-28) */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-8 md:pl-28 lg:pl-28 pr-4 sm:pr-8">
 
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
@@ -53,12 +53,12 @@ export default function WhyChooseMe() {
                         Why Businesses Choose Me
                     </span>
 
-                    <h2 className="mt-6 text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+                    <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight">
                         Building Software That
                         <span className="text-green-600"> Creates Business Value</span>
                     </h2>
 
-                    <p className="mt-6 text-gray-500 text-lg leading-relaxed">
+                    <p className="mt-6 text-gray-500 text-base sm:text-lg leading-relaxed">
                         I partner with startups, growing companies, and organizations to
                         deliver reliable software solutions that are scalable, maintainable,
                         and aligned with business objectives.
@@ -66,51 +66,52 @@ export default function WhyChooseMe() {
 
                 </div>
 
-                {/* Cards */}
+                {/* Cards Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     {reasons.map((item, index) => (
                         <div
                             key={index}
-                            className="group bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:bg-black hover:border-black transition-all duration-500"
+                            className="group bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:bg-black hover:border-black transition-all duration-500 flex flex-col justify-between w-full"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:border-zinc-800 transition-all">
-                                {item.icon}
+                            <div>
+                                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:border-zinc-800 transition-all">
+                                    {item.icon}
+                                </div>
+
+                                <h3 className="mt-8 text-xl sm:text-2xl font-black text-gray-900 group-hover:text-white transition-colors">
+                                    {item.title}
+                                </h3>
+
+                                <p className="mt-4 text-sm sm:text-base text-gray-500 group-hover:text-gray-400 leading-relaxed">
+                                    {item.desc}
+                                </p>
                             </div>
-
-                            <h3 className="mt-8 text-2xl font-black text-gray-900 group-hover:text-white transition-colors">
-                                {item.title}
-                            </h3>
-
-                            <p className="mt-4 text-gray-500 group-hover:text-gray-400 leading-8">
-                                {item.desc}
-                            </p>
                         </div>
                     ))}
 
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="mt-20 rounded-[2rem] bg-black p-10 md:p-14 text-center">
+                <div className="mt-20 rounded-[2rem] bg-black p-8 sm:p-10 md:p-14 text-center">
 
-                    <h3 className="text-3xl md:text-5xl font-black text-white">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
                         Ready to Build Your Next Software Product?
                     </h3>
 
-                    <p className="mt-5 text-gray-400 max-w-2xl mx-auto leading-8">
+                    <p className="mt-5 text-sm sm:text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         Whether you're launching a startup, modernizing an existing system,
                         or building custom business software, let's turn your ideas into
                         reliable digital products.
                     </p>
 
-                    <button className="mt-8 px-8 py-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold uppercase tracking-widest transition-all">
+                    <button className="mt-8 px-8 py-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold uppercase tracking-widest transition-all text-sm cursor-pointer">
                         Start a Project
                     </button>
 
                 </div>
 
             </div>
-
         </section>
     );
 }

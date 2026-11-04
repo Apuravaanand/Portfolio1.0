@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import "tailwindcss";
 
 @theme {
+  /* Set Audiowide as the default sans-serif font across the entire project */
+  --font-sans: "Audiowide", sans-serif;
+  --font-audiowide: "Audiowide", sans-serif;
 
   /* Define the keyframes for horizontal motion */
   @keyframes infinite-scroll {
@@ -17,16 +21,18 @@
   --animate-infinite-scroll: infinite-scroll 45s linear infinite;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ... your existing root and scrollbar styles ... */
-
+/* Base styles for global application */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Audiowide", sans-serif;
   scroll-behavior: smooth;
+  /* REMOVED overflow-x: hidden here to prevent section overlap bugs */
+}
+
+body {
+  font-family: "Audiowide", sans-serif;
   overflow-x: hidden;
+  /* Safe here on body */
+  width: 100%;
 }
 
 /* =================================================== MyBlog.jsx =================================================== */

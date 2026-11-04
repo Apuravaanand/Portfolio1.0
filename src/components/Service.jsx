@@ -51,15 +51,15 @@ const Service = () => {
     ];
 
     return (
-        <section className="relative bg-black py-24 md:py-44 px-4 sm:px-8 md:px-16 overflow-visible">
+        <section className="relative bg-black py-24 md:py-44 px-4 sm:px-8 overflow-visible w-full">
 
-            {/* TOP OVERLAY: Adjusted height for mobile to prevent layout shift */}
+            {/* TOP OVERLAY: Clip-path disabled on mobile, active on desktop */}
             <div
-                className="absolute top-0 left-0 w-full h-20 md:h-32 bg-white-100 z-20"
-                style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 40%, 80% 40%, 75% 0%, 55% 0%, 50% 40%, 25% 40%, 20% 0%, 0% 0%)" }}
+                className="absolute top-0 left-0 w-full h-20 md:h-32 bg-white z-20 service-top-clip"
             />
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            {/* Perfectly Centered Container with responsive desktop dock padding */}
+            <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 md:pl-28 lg:pl-32">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
 
                     {/* LEFT SIDE: Heading - Sticky only on Desktop (lg) */}
@@ -67,18 +67,18 @@ const Service = () => {
                         <div className="inline-block px-4 py-1 border border-green-500/30 bg-green-500/10 rounded-full">
                             <span className="text-green-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">Solutions</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight">
                             Digital <br />
                             <span className="text-green-600 italic">Architecture</span>
                         </h2>
-                        <p className="text-gray-400 text-base md:text-lg max-w-sm mx-auto lg:mx-0 text-justify">
+                        <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-sm mx-auto lg:mx-0 text-justify">
                             Engineering scalable software solutions that help businesses streamline operations, accelerate growth, and build with confidence.
                         </p>
                         <div className="h-1.5 w-16 md:w-20 bg-green-500 rounded-full mx-auto lg:mx-0" />
                     </div>
 
-                    {/* RIGHT SIDE: Services */}
-                    <div className="lg:col-span-7 space-y-6 md:space-y-8">
+                    {/* RIGHT SIDE: Services Cards */}
+                    <div className="lg:col-span-7 space-y-6 md:space-y-8 w-full">
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
@@ -86,7 +86,7 @@ const Service = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true, margin: "-50px" }}
-                                className="group bg-[#0c0c0c] p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-white/5 hover:border-green-500/30 transition-all duration-500"
+                                className="group bg-[#0c0c0c] p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-white/5 hover:border-green-500/30 transition-all duration-500 w-full"
                             >
                                 <div className="flex flex-col sm:flex-row gap-6 md:gap-8">
                                     <div className="shrink-0 flex justify-start sm:justify-center">
@@ -122,14 +122,26 @@ const Service = () => {
                 </div>
             </div>
 
-            {/* BOTTOM OVERLAY: Higher Z-index and interlocks with Achievements */}
+            {/* BOTTOM OVERLAY: Clip-path disabled on mobile, active on desktop */}
             <div
-                className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-white z-40"
-                style={{
-                    clipPath: "polygon(0% 100%, 100% 100%, 100% 60%, 80% 60%, 75% 100%, 55% 100%, 50% 60%, 25% 60%, 20% 100%, 0% 100%)",
-                    marginBottom: "-1px" // Fixes micro-gap on some browsers
-                }}
+                className="absolute bottom-0 left-0 w-full h-20 md:h-32 bg-white z-40 service-bottom-clip"
+                style={{ marginBottom: "-1px" }}
             />
+
+            <style>{`
+                .service-top-clip,
+                .service-bottom-clip {
+                    clip-path: none;
+                }
+                @media (min-width: 768px) {
+                    .service-top-clip {
+                        clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 80% 40%, 75% 0%, 55% 0%, 50% 40%, 25% 40%, 20% 0%, 0% 0%);
+                    }
+                    .service-bottom-clip {
+                        clip-path: polygon(0% 100%, 100% 100%, 100% 60%, 80% 60%, 75% 100%, 55% 100%, 50% 60%, 25% 60%, 20% 100%, 0% 100%);
+                    }
+                }
+            `}</style>
         </section>
     );
 };

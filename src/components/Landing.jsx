@@ -1,35 +1,13 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Code2, Server, Database, Globe } from "lucide-react";
 import Navbar from "../components/Navbar";
 import { FaDiscord, FaInstagram, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
     {
-        Icon: FaInstagram,
-        link: import.meta.env.VITE_INSTAGRAM,
-        label: "Instagram",
-    },
-    {
-        Icon: FaTelegramPlane,
-        link: import.meta.env.VITE_TELEGRAM,
-        label: "Telegram",
-    },
-    {
         Icon: FaLinkedin,
         link: import.meta.env.VITE_LINKEDIN,
-        label: "LinkedIn",
-    },
-    {
-        Icon: FaDiscord,
-        link: import.meta.env.VITE_DISCORD,
-        label: "Discord",
-    },
-];
-
-const TECH_ITEMS = [
-    { icon: Code2, text: "Custom Web Application Development" },
-    { icon: Server, text: "Scalable API & Backend Development" },
-    { icon: Database, text: "System Integration & Automation" },
+        label: "Founder's LinkedIn",
+    }
 ];
 
 export default function Landing() {
@@ -41,64 +19,75 @@ export default function Landing() {
     }, []);
 
     return (
-        <div className="min-h-screen w-full bg-[#fafafa] text-gray-900 font-sans flex flex-col overflow-x-hidden">
+        <div className="min-h-screen w-full bg-white text-gray-900 font-sans flex flex-col overflow-x-hidden">
             <Navbar />
 
-            {/* Fixed Background */}
+            {/* Fixed Background Glows */}
             <div className="fixed inset-0 pointer-events-none -z-10">
-                <div className="absolute w-[500px] h-[500px] blur-[120px] rounded-full -top-20 -left-20 opacity-[0.15] bg-green-400" />
-                <div className="absolute w-[500px] h-[500px] blur-[120px] rounded-full bottom-0 -right-20 opacity-[0.1] bg-blue-400" />
+                <div className="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] blur-[120px] rounded-full -top-20 -left-20 opacity-[0.1] bg-green-400" />
+                <div className="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] blur-[120px] rounded-full bottom-0 -right-20 opacity-[0.08] bg-blue-400" />
             </div>
 
-            <main className=" flex-1 flex items-center justify-center w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-12 lg:px-16 py-6 md:py-8">
+            <main className="flex-1 flex items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 py-8 md:py-12">
                 {loading ? (
                     /* Skeleton Loader */
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center w-full animate-pulse">
-                        <div className="space-y-6 text-center md:text-left">
-                            <div className="h-16 bg-gray-200 rounded-2xl w-full max-w-md mx-auto md:mx-0" />
-                            <div className="h-6 bg-gray-200 rounded-lg w-full max-w-lg mx-auto md:mx-0" />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full animate-pulse">
+                        <div className="w-full h-72 sm:h-80 bg-gray-100 rounded-[2rem] max-w-lg mx-auto" />
+                        <div className="space-y-6 text-center lg:text-left">
+                            <div className="h-16 bg-gray-100 rounded-2xl w-full max-w-md mx-auto lg:mx-0" />
+                            <div className="h-6 bg-gray-100 rounded-lg w-full max-w-lg mx-auto lg:mx-0" />
                         </div>
-                        <div className="w-full h-80 bg-gray-200 rounded-[2rem] max-w-lg mx-auto" />
                     </div>
                 ) : (
                     /* Main Content */
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full mb-8">
-                        <div className="text-center md:text-left mt-10 space-y-4">
-                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
-                                Building <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Scalable Digital</span> Solutions
+                    <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+
+                        {/* Left Column: pl-0 on mobile, md:pl-24 / lg:pl-12 only on desktop to clear the navbar dock */}
+                        <div className="text-center lg:text-left space-y-6 pl-0 md:pl-24 lg:pl-12">
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.2] font-audiowide">
+                                Enterprise-Grade <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Cloud Infrastructure</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">SaaS Automation</span>
                             </h1>
-                            <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto md:mx-0 leading-relaxed text-justify">
-                                Turn your idea into a reliable product with modern full-stack development.
-                                I create scalable end-to-end applications, secure backend APIs, and responsive
-                                user experiences focused on performance, quality, and long-term growth.
+
+                            {/* Short, to-the-point paragraph with lighter weight */}
+                            <p className="text-sm sm:text-base font-light text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed text-justify">
+                                Resilient cloud architecture and automated deployments engineered for high-availability SaaS products.
                             </p>
-                            <div className="flex flex-wrap gap-4 mt-10 justify-center md:justify-start">
-                                {SOCIAL_LINKS.map(({ Icon, link }, index) => (
-                                    <a key={index} href={link} target="_blank" rel="noopener noreferrer" className="p-4 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-md shadow-sm hover:shadow-green-100 hover:border-green-200 transition-all">
-                                        <Icon size={22} className="text-gray-700 hover:text-green-600" />
+
+                            {/* Social Links with Bottom Margin */}
+                            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-12 sm:mb-16">
+                                {SOCIAL_LINKS.map(({ Icon, link, label }, index) => (
+                                    <a
+                                        key={index}
+                                        href={link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={label}
+                                        className="p-3 sm:p-4 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-green-100 hover:border-green-300 transition-all"
+                                    >
+                                        <Icon size={20} className="text-gray-700 hover:text-green-600" />
                                     </a>
                                 ))}
+
+                                <a href="/contact" className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-gray-400 hover:bg-gray-600 text-white font-bold text-xs sm:text-sm uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center"  >
+                                    Contact
+                                </a>
+                                <a href="/about" className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-blue-600 hover:bg-gray-600 text-white font-bold text-xs sm:text-sm uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center"  >
+                                    About Provider
+                                </a>
                             </div>
                         </div>
 
-                        <div className="relative w-full max-w-lg mx-auto">
-                            <div className="relative rounded-[2rem] p-5 sm:p-6 lg:p-8 bg-white/90 backdrop-blur-xl  border border-gray-400">
-                                <div className="flex flex-col gap-8">
-                                    <div className="border-b border-gray-100 pb-4">
-                                        <h3 className="text-2xl font-bold text-gray-800">Core Expertise</h3>
-                                        <pre className="text-sm font-semibold text-green-600 uppercase tracking-tighter">Scalable  • Secure  • Business Focused</pre>
-                                    </div>
-                                    <div className="grid grid-cols-1 gap-4">
-                                        {TECH_ITEMS.map((item, i) => (
-                                            <div key={i} className="flex items-center gap-4 p-3 rounded-xl bg-gray-100 border border-gray-200">
-                                                <div className="p-2.5 bg-white rounded-lg shadow-sm"><item.icon size={20} className="text-green-600" /></div>
-                                                <span className="text-sm font-bold text-gray-700">{item.text}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                        {/* Right Column / Top on Mobile: GIF Container */}
+                        <div className="relative w-full max-w-md sm:max-w-lg mx-auto flex items-center justify-center lg:-translate-y-6">
+                            <div className="relative rounded-[2rem] p-2 sm:p-3 bg-transparent overflow-hidden w-full">
+                                <img
+                                    src="/landing_page.gif"
+                                    alt="Landing Page Animation"
+                                    className="w-full h-auto rounded-[1.5rem] object-cover"
+                                />
                             </div>
                         </div>
+
                     </div>
                 )}
             </main>

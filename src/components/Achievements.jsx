@@ -31,8 +31,9 @@ export default function Achievements() {
     >
       <div className="absolute top-0 right-0 w-1/3 h-full bg-green-500/5 skew-x-12 translate-x-24 -z-10 hidden lg:block" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+      {/* Responsive padding: pl-0 on mobile, md:pl-28/lg:pl-24 to clear fixed navbar dock on desktop */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pl-0 md:pl-28 lg:pl-24 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
           {/* Text Content */}
           <motion.div
             variants={container}
@@ -44,11 +45,11 @@ export default function Achievements() {
             <motion.div variants={item} className="inline-block px-4 py-1 bg-green-500/10 border border-green-500/20 text-green-700 text-[10px] font-bold uppercase tracking-widest rounded-full">
               Performance Metrics
             </motion.div>
-            <motion.h2 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1]">
-              Engineering <br />
+            <motion.h2 variants={item} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1]">
+              Engineering <br className="hidden sm:block" />
               <span className="text-green-600 italic">Impact</span>
             </motion.h2>
-            <motion.p variants={item} className="text-gray-500 max-w-lg mx-auto lg:mx-0 text-base md:text-lg leading-relaxed">
+            <motion.p variants={item} className="text-gray-500 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg leading-relaxed">
               Scaling digital products isn't just about code—it's about measurable efficiency.
             </motion.p>
             <motion.div variants={item} className="flex justify-center lg:justify-start">
@@ -81,12 +82,14 @@ export default function Achievements() {
 function StatCard({ title, value, index }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-20px" });
+
+  const targetNumber = parseInt(value, 10) || 0;
   const springValue = useSpring(0, { stiffness: 50, damping: 30, restDelta: 0.001 });
   const displayValue = useTransform(springValue, (latest) => Math.floor(latest));
 
   useEffect(() => {
-    if (inView) springValue.set(value);
-  }, [inView, value, springValue]);
+    if (inView) springValue.set(targetNumber);
+  }, [inView, targetNumber, springValue]);
 
   return (
     <motion.div
@@ -95,17 +98,17 @@ function StatCard({ title, value, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="relative group p-6 md:p-8 rounded-[2rem] bg-white border border-gray-600/50 shadow-sm hover:shadow-xl transition-all duration-300 w-full min-w-0"
+      className="relative group p-5 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white border border-gray-600/50 shadow-sm hover:shadow-xl transition-all duration-300 w-full min-w-0"
     >
-      <div className="absolute -top-2 -right-2 text-green-500/5 group-hover:text-green-500/10 transition-colors">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+      <div className="absolute -top-2 -right-2 text-green-500/5 group-hover:text-green-500/10 transition-colors pointer-events-none">
+        <svg width="70" height="70" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
       </div>
       <div className="relative z-10 text-center sm:text-left">
-        <motion.span className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter block truncate">
+        <motion.span className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tighter block truncate">
           <Counter node={displayValue} />
           <span className="text-green-500">+</span>
         </motion.span>
-        <p className="mt-2 text-gray-400 font-bold uppercase text-[9px] tracking-[0.15em] leading-tight truncate">
+        <p className="mt-2 text-gray-400 font-bold uppercase text-[9px] sm:text-[10px] tracking-[0.15em] leading-tight truncate">
           {title}
         </p>
       </div>

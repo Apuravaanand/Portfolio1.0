@@ -7,6 +7,8 @@ import ServicesPage from "./pages/ServicesPage";
 
 // Only import the cursor you are actually using to keep the bundle small
 import GreenDotCursor from "./components/AquaticCursor";
+import PrivacyPolicy from "./pages/Policy";
+import Policy from "./pages/Policy";
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/service" element={<ServicesPage />} />
+        <Route path="/private-policy" element={<Policy />} />
         <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/" element={<Navigate to="/home" replace />} />

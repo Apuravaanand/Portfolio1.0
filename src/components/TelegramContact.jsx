@@ -52,7 +52,7 @@ const TelegramContact = () => {
                 {/* Left Column: Agency Branding & Trust Value Props */}
                 <div className="lg:col-span-5 space-y-12 lg:pr-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-semibold tracking-wide uppercase">
-                        <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
+
                         Available for New Projects
                     </div>
 
@@ -193,7 +193,7 @@ const TelegramContact = () => {
                                 <span>Secure Communication</span>
 
                                 <span className="flex items-center gap-1">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+
                                     We will response soon
                                 </span>
                             </div>

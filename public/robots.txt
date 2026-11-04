@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+
+Host: https://apurava.netlify.app
+
+Sitemap: https://apurava.netlify.app/sitemap.xml
