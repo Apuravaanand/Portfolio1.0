@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { FaDiscord, FaInstagram, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
 export default function Landing() {
-    const linkedinUrl = import.meta.env.VITE_LINKEDIN;
+    const linkedinUrl = "https://www.linkedin.com/company/vraks/home/?viewAsMember=true";
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

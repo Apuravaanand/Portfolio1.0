@@ -12,8 +12,8 @@ const TelegramContact = () => {
     const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
     const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
-    const instagramUrl = import.meta.env.VITE_INSTAGRAM || "https://www.instagram.com/vraks.cloud/";
-    const linkedinUrl = import.meta.env.VITE_LINKEDIN || "https://www.linkedin.com/company/vraks/";
+    const instagramUrl = "https://www.instagram.com/vraks.cloud/";
+    const linkedinUrl = "https://www.linkedin.com/company/vraks/home/?viewAsMember=true";
 
     const handleSend = async (e) => {
         e.preventDefault();

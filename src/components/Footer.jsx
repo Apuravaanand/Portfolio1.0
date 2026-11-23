@@ -4,9 +4,9 @@ import { CgCommunity } from "react-icons/cg";
 import { FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
-    const instagramUrl = import.meta.env.VITE_INSTAGRAM;
-    const linkedinUrl = import.meta.env.VITE_LINKEDIN;
-    const discordUrl = import.meta.env.VITE_DISCORD;
+    const instagramUrl = "https://www.instagram.com/vraks.cloud/";
+    const linkedinUrl = "https://www.linkedin.com/company/vraks/home/?viewAsMember=true";
+    const discordUrl = "https://discord.com/invite/hthSU6nT";
     return (
         <motion.footer
             initial={{ opacity: 0 }}
