@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/service" element={<ServicesPage />} />
         <Route path="/private-policy" element={<Policy />} />
         <Route path="/contact" element={<ContactPage />} />
-
+        <Route path="/home" element={<LandingPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
