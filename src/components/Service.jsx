@@ -1,53 +1,94 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Database, Globe, Briefcase } from "lucide-react";
+import {
+    ShieldCheck,
+    Database,
+    Globe,
+    Briefcase,
+    Activity,
+    Search,
+    Compass,
+} from "lucide-react";
 
 const Service = () => {
     const services = [
         {
             number: "01",
             icon: <Globe className="text-green-500" size={24} />,
-            title: "Custom Business Software",
-            desc: "Tailor-made web applications designed to streamline operations, improve productivity, and support business growth.",
+            title: "Frontend & SaaS UI Engineering",
+            desc: "Build fast, responsive SaaS interfaces and web applications with clean component architecture, intuitive UX, and room to scale.",
             points: [
-                "Business Management Systems",
-                "Internal Dashboards",
-                "Workflow Automation",
+                "0-to-1 SaaS UI",
+                "Responsive Web Apps",
+                "Design Systems & State",
             ],
         },
         {
             number: "02",
-            icon: <ShieldCheck className="text-green-500" size={24} />,
-            title: "SaaS & Digital Product Development",
-            desc: "Build scalable SaaS platforms and digital products from idea to launch with a focus on performance and future growth.",
+            icon: <Database className="text-green-500" size={24} />,
+            title: "Full Stack Application & Deployment",
+            desc: "Develop end-to-end web applications with structured APIs, reliable databases, and smooth production deployments.",
             points: [
-                "MVP Development",
-                "Multi-Tenant SaaS",
-                "Product Scaling",
+                "End-to-End Web Apps",
+                "Auth, Roles & APIs",
+                "Production Launch",
             ],
         },
         {
             number: "03",
-            icon: <Database className="text-green-500" size={24} />,
-            title: "Backend Systems & API Integration",
-            desc: "Develop secure backend infrastructure and connect your software with third-party services for seamless business operations.",
+            icon: <ShieldCheck className="text-green-500" size={24} />,
+            title: "DevOps, Cloud & CI/CD",
+            desc: "Set up containerized cloud environments, reverse proxies, and automated pipelines for consistent, low-risk releases.",
             points: [
-                "Custom APIs",
-                "Third-Party Integrations",
-                "Cloud Infrastructure",
+                "Docker & Cloud Setup",
+                "Automated CI/CD",
+                "Reverse Proxy & SSL",
             ],
         },
         {
             number: "04",
-            icon: <Briefcase className="text-green-500" size={24} />,
-            title: "Enterprise & Corporate Solutions",
-            desc: "Modern software solutions for organizations requiring reliable, scalable, and maintainable business applications.",
+            icon: <Activity className="text-green-500" size={24} />,
+            title: "Security, Hardening & Monitoring",
+            desc: "Keep applications and servers healthy with practical access controls, uptime checks, log visibility, and system/network monitoring.",
             points: [
-                "Enterprise Portals",
-                "Client & Employee Portals",
-                "Business Process Automation",
+                "Uptime & Health Alerts",
+                "Server & Network Logs",
+                "Auth & Access Hardening",
             ],
         },
+        {
+            number: "05",
+            icon: <Search className="text-green-500" size={24} />,
+            title: "Technical SEO & Performance",
+            desc: "Improve search visibility, page speed, and Core Web Vitals so SaaS landing pages and web apps load quickly worldwide.",
+            points: [
+                "Technical SEO Setup",
+                "Core Web Vitals",
+                "Metadata & Crawlability",
+            ],
+        },
+        {
+            number: "06",
+            icon: <Briefcase className="text-green-500" size={24} />,
+            title: "Internal Tools & Workflow Automation",
+            desc: "Build custom admin dashboards, client portals, and automated workflows that remove repetitive manual operations.",
+            points: [
+                "Admin Dashboards",
+                "Client Portals",
+                "Workflow Automation",
+            ],
+        },
+        {
+            number: "07",
+            icon: <Compass className="text-green-500" size={24} />,
+            title: "Software Journey Consulting",
+            desc: "Practical technical guidance for founders planning an MVP, choosing a stack, or moving from prototype to reliable production.",
+            points: [
+                "MVP Scope & Roadmap",
+                "Stack & Architecture Advice",
+                "Deployment Readiness",
+            ],
+        }
     ];
 
     return (
@@ -68,12 +109,10 @@ const Service = () => {
                             <span className="text-green-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">Solutions</span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight">
-                            Digital <br />
-                            <span className="text-green-600 italic">Architecture</span>
+                            Our Expertise <br />
+                            <span className="text-green-600 italic">Engineering</span>
                         </h2>
-                        <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-sm mx-auto lg:mx-0 text-justify">
-                            Engineering scalable software solutions that help businesses streamline operations, accelerate growth, and build with confidence.
-                        </p>
+
                         <div className="h-1.5 w-16 md:w-20 bg-green-500 rounded-full mx-auto lg:mx-0" />
                     </div>
 
@@ -81,12 +120,12 @@ const Service = () => {
                     <div className="lg:col-span-7 space-y-6 md:space-y-8 w-full">
                         {services.map((service, index) => (
                             <motion.div
-                                key={index}
+                                key={service.number}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 viewport={{ once: true, margin: "-50px" }}
-                                className="group bg-[#0c0c0c] p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-white/5 hover:border-green-500/30 transition-all duration-500 w-full"
+                                className="group bg-[#525252] p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 hover:border-green-500/30 transition-all duration-500 w-full"
                             >
                                 <div className="flex flex-col sm:flex-row gap-6 md:gap-8">
                                     <div className="shrink-0 flex justify-start sm:justify-center">
@@ -100,16 +139,13 @@ const Service = () => {
                                             <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-green-400 transition-colors">
                                                 {service.title}
                                             </h3>
-                                            <span className="hidden sm:block text-2xl md:text-3xl font-black text-white/5 italic select-none">
-                                                {service.number}
-                                            </span>
                                         </div>
-                                        <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">
+                                        <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed">
                                             {service.desc}
                                         </p>
                                         <div className="flex flex-wrap gap-2">
                                             {service.points.map((p, i) => (
-                                                <span key={i} className="px-2 md:px-3 py-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-white/10 rounded-md group-hover:border-green-500/20 transition-all">
+                                                <span key={i} className="px-2 md:px-3 py-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-300 border border-white/10 rounded-md group-hover:border-green-500/20 transition-all">
                                                     {p}
                                                 </span>
                                             ))}

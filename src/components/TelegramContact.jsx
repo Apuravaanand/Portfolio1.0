@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
+import { Mail, Phone, Instagram, Linkedin } from 'lucide-react';
 // Import the sticker from your assets folder
 import contactSticker from '../assets/contact.png';
 
 const TelegramContact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
     const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+    const instagramUrl = import.meta.env.VITE_INSTAGRAM || "https://www.instagram.com/vraks.cloud/";
+    const linkedinUrl = import.meta.env.VITE_LINKEDIN || "https://www.linkedin.com/company/vraks/";
 
     const handleSend = async (e) => {
         e.preventDefault();
@@ -18,6 +23,7 @@ const TelegramContact = () => {
         }
 
         setLoading(true);
+        setSubmitted(false);
         const text = `
 🌿 *New Portfolio Message*
 ──────────────────
@@ -33,6 +39,7 @@ const TelegramContact = () => {
                 parse_mode: 'Markdown',
             });
             setFormData({ name: '', email: '', message: '' });
+            setSubmitted(true);
         } catch (error) {
             console.error("Error:", error);
             alert(`Failed: ${error.response?.data?.description || "Check connection"}`);
@@ -42,30 +49,75 @@ const TelegramContact = () => {
     };
 
     return (
-        <section className="relative min-h-screen bg-gray-400 text-zinc-100 flex items-center justify-center p-4 sm:p-8 font-sans overflow-hidden">
+        <section className="relative min-h-screen bg-gray-400 text-zinc-100 flex items-center justify-center sm:p-8 font-sans overflow-hidden">
             {/* Background Ambient Glow Effects */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
+            <div className="relative w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start lg:items-center z-10">
 
-                {/* Left Column: Agency Branding & Trust Value Props */}
-                <div className="lg:col-span-5 space-y-12 lg:pr-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-semibold tracking-wide uppercase">
-
+                {/* Left Column: Agency Branding, Contact Details & Trust Value Props */}
+                <div className="lg:col-span-5 space-y-6 lg:pr-4 p-10">
+                    {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-xs font-semibold tracking-wide uppercase">
                         Available for New Projects
-                    </div>
+                    </div> */}
 
                     <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-                        Have a Project in Mind?
+                        Schedule a <span className='text-green-600'>Meeting</span>
                     </h2>
 
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                        Whether you're launching a startup, scaling an existing business, or building custom internal software, I develop reliable, scalable, and high-performance digital solutions tailored to your business objectives.
-                    </p>
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
+                        Whether you&apos;re launching a startup, scaling an existing business, or building custom internal software.          </p>
+
+                    {/* Direct Contact & Social Links */}
+                    <div className="rounded-2xl bg-white border border-gray-200 p-5 shadow-sm space-y-3.5">
+                        <a
+                            href="mailto:erapurava@gmail.com"
+                            className="flex items-center gap-3 text-sm text-gray-800 hover:text-green-600 transition"
+                        >
+                            <span className="p-2 rounded-lg bg-green-50 text-green-700 shrink-0">
+                                <Mail size={16} />
+                            </span>
+                            <span className="font-medium break-all">vrakscloud@outlook.com</span>
+                        </a>
+
+                        <a
+                            href="tel:+916026260030"
+                            className="flex items-center gap-3 text-sm text-gray-800 hover:text-green-600 transition"
+                        >
+                            <span className="p-2 rounded-lg bg-green-50 text-green-700 shrink-0">
+                                <Phone size={16} />
+                            </span>
+                            <span className="font-medium">+91 6026260030</span>
+                        </a>
+
+                        <div className="pt-2 border-t border-gray-100 flex items-center gap-3">
+                            <a
+                                href={instagramUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gray-50 hover:bg-green-50 border border-gray-200 text-xs font-semibold text-gray-800 hover:text-green-700 transition"
+                            >
+                                <Instagram size={16} />
+                                <span>Instagram</span>
+                            </a>
+
+                            <a
+                                href={linkedinUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gray-50 hover:bg-green-50 border border-gray-200 text-xs font-semibold text-gray-800 hover:text-green-700 transition"
+                            >
+                                <Linkedin size={16} />
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
 
                     {/* Trust Indicators */}
-                    <div className="grid grid-cols-2 gap-4 pt-2">
+                    <div className="grid grid-cols-2 gap-4">
                         <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
                             <h3 className="text-gray-900 font-bold text-lg">24h</h3>
                             <p className="text-xs text-gray-500">
@@ -82,8 +134,8 @@ const TelegramContact = () => {
                     </div>
                 </div>
 
-                {/* Right Column: Premium Form Card */}
-                <div className="lg:col-span-7 relative">
+                {/* Right Column: Adjusted Form Card */}
+                <div className="lg:col-span-7 relative w-full">
                     {/* Sticker Image Positioned Nicely Above/Beside Card */}
                     {contactSticker && (
                         <img
@@ -93,8 +145,8 @@ const TelegramContact = () => {
                         />
                     )}
 
-                    <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-xl relative">
-                        <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
+                    <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-xl relative w-full">
+                        <div className="flex items-center justify-between mb-5 pb-4 border-b border-gray-200">
                             <div>
                                 <h3 className="text-xl font-bold text-gray-900 tracking-tight">
                                     Start a Conversation
@@ -107,7 +159,13 @@ const TelegramContact = () => {
                             <div className="h-2.5 w-2.5 rounded-full bg-green-600 shadow-[0_0_12px_rgba(22,163,74,0.35)]" />
                         </div>
 
-                        <form onSubmit={handleSend} className="space-y-5">
+                        {submitted && (
+                            <div className="mb-4 rounded-xl bg-green-50 border border-green-200 px-4 py-3 text-xs font-medium text-green-800">
+                                Message sent successfully. We&apos;ll get back to you shortly.
+                            </div>
+                        )}
+
+                        <form onSubmit={handleSend} className="space-y-4 sm:space-y-5">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                                 <div>
@@ -166,7 +224,7 @@ const TelegramContact = () => {
                                             message: e.target.value,
                                         })
                                     }
-                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-all min-h-[130px] resize-none"
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-all min-h-[140px] resize-y"
                                     required
                                 />
                             </div>
@@ -193,7 +251,6 @@ const TelegramContact = () => {
                                 <span>Secure Communication</span>
 
                                 <span className="flex items-center gap-1">
-
                                     We will response soon
                                 </span>
                             </div>

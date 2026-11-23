@@ -40,9 +40,7 @@ export default function Tech_Fall() {
     <section className="relative py-16 bg-white overflow-hidden border-y border-gray-200">
 
       <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-        <p className="uppercase tracking-[0.3em] text-xs font-bold text-green-600">
-          TECHNOLOGY STACK
-        </p>
+
 
         <h2 className="mt-3 text-4xl md:text-5xl font-black text-gray-900">
           Technologies I Work With

@@ -2,9 +2,9 @@ import React from 'react';
 
 const DevStickers = () => {
     const tools = [
-        "MERN STACK", "UI/UX DESIGN", "FREELANCE", "C++ LOGIC", 
+        "MERN STACK", "UI/UX DESIGN", "FREELANCE", "C++ LOGIC",
         "2026 EDITION", "REACT DEVELOPER", "NODE.JS", "TAILWIND CSS",
-        "MERN STACK", "UI/UX DESIGN", "FREELANCE", "C++ LOGIC", 
+        "MERN STACK", "UI/UX DESIGN", "FREELANCE", "C++ LOGIC",
         "2026 EDITION", "REACT DEVELOPER", "NODE.JS", "TAILWIND CSS"
     ];
 
@@ -12,10 +12,10 @@ const DevStickers = () => {
         <section className="relative w-full bg-white py-24 overflow-hidden flex items-center justify-center">
             {/* The "Tape" Container */}
             <div className="relative w-full py-4 -rotate-1 scale-105 bg-green-500 border-y-2 border-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] group z-10">
-                
+
                 {/* Scrolling Wrapper */}
                 <div className="flex w-fit animate-infinite-scroll group-hover:[animation-play-state:paused]">
-                    
+
                     {/* Loop 1 */}
                     <div className="flex items-center gap-12 px-6">
                         {tools.map((tool, index) => (

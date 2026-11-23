@@ -8,7 +8,7 @@ const ProjectPage = () => {
   return (
     <div>
       <Navbar />
-      {/* <Projects/> */}
+      {/* <Projects/> */}//update further
       <Footer />
     </div>
   )

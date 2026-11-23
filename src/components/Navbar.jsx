@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Home, Briefcase, BookOpen, Mail, Zap } from "lucide-react";
+import { Menu, X, Home, Briefcase, BookOpen, Mail, Zap, ServerIcon, CloudCog, ShieldCheck, Info, Phone, Building2, UserRoundCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FcAbout } from "react-icons/fc";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [hovered, setHovered] = useState(null);
 
     const links = [
-        { name: "Home", icon: <Home size={20} />, path: "/", id: "01" },
-        { name: "About", icon: <Briefcase size={20} />, path: "/about", id: "02" },
-        { name: "Service", icon: <BookOpen size={20} />, path: "/service", id: "03" },
-        { name: "Policy", icon: <Zap size={20} />, path: "/private-policy", id: "04" },
-        { name: "Contact", icon: <Mail size={20} />, path: "/contact", id: "05" },
+        { name: "Home", icon: <Home size={20} />, path: "/", id: "" },
+        { name: "About", icon: <Building2 size={20} />, path: "/about", id: "" },
+        { name: "Service", icon: <CloudCog size={20} />, path: "/service", id: "" },
+        { name: "Policy", icon: <ShieldCheck size={20} />, path: "/private-policy", id: "" },
+        { name: "Contact", icon: <Phone size={20} />, path: "/contact", id: "" },
     ];
-
     return (
         <>
             {/* DESKTOP VERTICAL DOCK */}

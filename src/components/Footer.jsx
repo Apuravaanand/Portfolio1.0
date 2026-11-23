@@ -1,44 +1,44 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, MapPin, MessageSquare, Briefcase, Instagram } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin, MessageSquare, Briefcase, Instagram } from "lucide-react";
+import { CgCommunity } from "react-icons/cg";
+import { FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
+    const instagramUrl = import.meta.env.VITE_INSTAGRAM;
+    const linkedinUrl = import.meta.env.VITE_LINKEDIN;
+    const discordUrl = import.meta.env.VITE_DISCORD;
     return (
         <motion.footer
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            animate={{
-                boxShadow: [
-                    "0 0 0px rgba(34,197,94,0.0)",
-                    "0 0 40px rgba(34,197,94,0.15)",
-                    "0 0 0px rgba(34,197,94,0.0)"
-                ]
-            }}
-            transition={{
-                opacity: { duration: 0.6 },
-                boxShadow: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }
-            }}
-            className="relative bg-black text-white-800 py-16 px-6 md:px-16 overflow-hidden"
+            viewport={{ once: true, amount: "some" }}
+            transition={{ opacity: { duration: 0.6 } }}
+            className="relative bg-black text-gray-100 py-16 px-6 md:px-16 overflow-hidden"
         >
             {/* Soft background glows */}
-            <div className="absolute w-64 h-64 blur-3xl rounded-full top-10 left-10 opacity-10 bg-green-400"></div>
-            <div className="absolute w-64 h-64 blur-3xl rounded-full bottom-10 right-10 opacity-10 bg-gray-300"></div>
+            <div className="absolute w-64 h-64 blur-3xl rounded-full top-10 left-10 opacity-10 bg-green-400 pointer-events-none" />
+            <div className="absolute w-64 h-64 blur-3xl rounded-full bottom-10 right-10 opacity-10 bg-gray-300 pointer-events-none" />
 
-            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="relative ml-0 lg:ml-18 z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
                 {/* About Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: "some" }}
                     transition={{ duration: 0.6 }}
                     className="space-y-4"
                 >
-                    <h3 className="text-xl font-semibold text-green-500">About Me</h3>
-                    <p className="text-gray-100">
-                        I don’t just build websites — I engineer scalable web systems designed for growth, efficiency, and long-term impact.
+                    <div className="flex items-center gap-3">
+                        <img
+                            src="/logo.jpg"
+                            alt="Vraks Cloud logo"
+                            className="h-9 w-auto object-contain rounded-md"
+                        />
+                        <h3 className="text-xl font-semibold text-green-500">Vraks Cloud</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">
+                        Building production SaaS applications, reliable backends, and automated cloud deployments for founders and teams worldwide.
                     </p>
                 </motion.div>
 
@@ -46,24 +46,35 @@ export default function Footer() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: "some" }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="space-y-4"
                 >
-                    <h3 className="text-xl font-semibold text-green-600">Contact</h3>
+                    <h3 className="text-xl font-semibold text-green-500">Contact</h3>
 
                     <div className="flex items-center gap-3">
-                        <Mail size={20} className="text-green-600" />
-                        <span className="text-gray-100"> erapurava@gmail.com</span>
+                        <Mail size={20} className="text-green-500 shrink-0" />
+                        <a
+                            href="mailto:erapurava@gmail.com"
+                            className="text-gray-200 hover:text-green-400 transition"
+                        >
+                            vrakscloud@outlook.com
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Phone size={20} className="text-green-600" />
-                        <span className="text-gray-100">+91 7903299186</span>
+                        <Phone size={20} className="text-green-500 shrink-0" />
+                        <a
+                            href="tel:+916026260030"
+                            className="text-gray-200 hover:text-green-400 transition"
+                        >
+                            +91 6026260030
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <MapPin size={20} className="text-green-600" />
-                        <span className="text-gray-100">Guwahati, India</span>
+                        <MapPin size={20} className="text-green-500 shrink-0" />
+                        <span className="text-gray-200">Tezpur, India </span>
                     </div>
                 </motion.div>
 
@@ -71,46 +82,40 @@ export default function Footer() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: "some" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="space-y-4"
                 >
-                    <h3 className="text-xl font-semibold text-green-600">Follow Me</h3>
+                    <h3 className="text-xl font-semibold text-green-500">Connect</h3>
 
                     <div className="flex gap-6 mt-2">
                         <a
-                            href="https://www.instagram.com/apurava__/"
+                            href={instagramUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
+                            aria-label="Instagram"
+                            className="text-gray-200 hover:text-green-500 transition hover:scale-110"
                         >
                             <Instagram size={22} />
                         </a>
-
                         <a
-                            href="https://www.fiverr.com/s/jjBE1p9"
+                            href={linkedinUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
-                        >
-                            <Briefcase size={22} />
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/apurava-anand-/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
+                            aria-label="LinkedIn"
+                            className="text-gray-200 hover:text-green-500 transition hover:scale-110"
                         >
                             <Linkedin size={22} />
                         </a>
 
                         <a
-                            href="https://discord.gg/hthSU6nT"
+                            href={discordUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-100 hover:text-green-600 transition hover:scale-110"
+                            aria-label="Discord"
+                            className="text-gray-200 hover:text-green-500 transition hover:scale-110"
                         >
-                            <MessageSquare size={22} />
+                            <FaDiscord size={22} />
                         </a>
                     </div>
                 </motion.div>

@@ -1,13 +1,11 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Landing from '../components/Landing'
-import Contact from '../components/SocialMedia'
 import Footer from '../components/Footer'
 import Service from '../components/Service'
 import Achievements from '../components/Achievements'
 import TelegramContact from '../components/TelegramContact'
-import DevStickers from '../components/DevStickers'
-import ApproachSection from '../components/ApproachSection'
+import FAQ from '../components/FAQ'
 
 const LandingPage = () => {
   return (
@@ -16,10 +14,9 @@ const LandingPage = () => {
       <Landing />
       <Achievements />
       <Service />
-      <ApproachSection />
+      <FAQ />
       <TelegramContact />
       <Footer />
-      {/* <DevStickers/> */}
     </div>
   )
 }

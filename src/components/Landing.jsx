@@ -2,15 +2,8 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { FaDiscord, FaInstagram, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
-const SOCIAL_LINKS = [
-    {
-        Icon: FaLinkedin,
-        link: import.meta.env.VITE_LINKEDIN,
-        label: "Founder's LinkedIn",
-    }
-];
-
 export default function Landing() {
+    const linkedinUrl = import.meta.env.VITE_LINKEDIN;
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -43,36 +36,28 @@ export default function Landing() {
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
 
                         {/* Left Column: pl-0 on mobile, md:pl-24 / lg:pl-12 only on desktop to clear the navbar dock */}
-                        <div className="text-center lg:text-left space-y-6 pl-0 md:pl-24 lg:pl-12">
+                        <div className="text-center lg:text-left space-y-6 pl-0 md:pl-24 ml-4 lg:pl-10">
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.2] font-audiowide">
-                                Enterprise-Grade <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Cloud Infrastructure</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">SaaS Automation</span>
+                                Enterprise-Grade End-to-End <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">SaaS Development</span> and <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">Cloud Infrastructure</span>
                             </h1>
 
                             {/* Short, to-the-point paragraph with lighter weight */}
                             <p className="text-sm sm:text-base font-light text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed text-justify">
-                                Resilient cloud architecture and automated deployments engineered for high-availability SaaS products.
+                                End-to-end SaaS engineering and automated cloud deployments built for high uptime and effortless scale.
                             </p>
 
                             {/* Social Links with Bottom Margin */}
                             <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-12 sm:mb-16">
-                                {SOCIAL_LINKS.map(({ Icon, link, label }, index) => (
-                                    <a
-                                        key={index}
-                                        href={link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={label}
-                                        className="p-3 sm:p-4 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-green-100 hover:border-green-300 transition-all"
-                                    >
-                                        <Icon size={20} className="text-gray-700 hover:text-green-600" />
-                                    </a>
-                                ))}
 
                                 <a href="/contact" className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-gray-400 hover:bg-gray-600 text-white font-bold text-xs sm:text-sm uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center"  >
                                     Contact
                                 </a>
-                                <a href="/about" className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-blue-600 hover:bg-gray-600 text-white font-bold text-xs sm:text-sm uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center"  >
-                                    About Provider
+                                <a
+                                    href={linkedinUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-blue-600 hover:bg-gray-600 text-white font-bold text-xs sm:text-sm uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center"  >
+                                    <FaLinkedin size={20} className="mr-2" />Linkdin
                                 </a>
                             </div>
                         </div>

@@ -1,16 +1,15 @@
-import React from 'react'
 import Navbar from '../components/Navbar'
-import About_first from '../components/About_first'
-import About_sec from '../components/About_sec'
 import Footer from '../components/Footer'
 import Tech_Fall from '../components/Tech_Orbit'
+import About_company from '../components/About_company'
+import ApproachSection from '../components/ApproachSection'
 
 const About = () => {
     return (
         <div>
             <Navbar />
-            <About_first />
-            <About_sec />
+            <About_company />
+            <ApproachSection />
             <Tech_Fall />
             <Footer />
         </div>

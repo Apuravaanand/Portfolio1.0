@@ -62,7 +62,7 @@ const process = [
 
 export default function ApproachSection() {
     return (
-        <section className="py-24 px-6 bg-white mb-10">
+        <section className="px-6 bg-white mb-10">
 
             {/* Added responsive pl-0 md:pl-28 lg:pl-20 to clear fixed navbar dock on desktop */}
             <div className="max-w-7xl mx-auto relative pl-0 md:pl-28 lg:pl-20">

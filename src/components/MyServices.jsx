@@ -73,10 +73,10 @@ export default function WhyChooseMe() {
                     {reasons.map((item, index) => (
                         <div
                             key={index}
-                            className="group bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:bg-black hover:border-black transition-all duration-500 flex flex-col justify-between w-full"
+                            className="group bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:bg-gray-600 transition-all duration-500 flex flex-col justify-between w-full"
                         >
                             <div>
-                                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center group-hover:bg-zinc-900 group-hover:border-zinc-800 transition-all">
+                                <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center transition-all">
                                     {item.icon}
                                 </div>
 

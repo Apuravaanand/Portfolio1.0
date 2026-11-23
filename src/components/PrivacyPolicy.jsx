@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
                                 href="mailto:erapurava@gmail.com"
                                 className="inline-flex items-center gap-2 text-green-600 font-bold hover:underline text-base sm:text-lg"
                             >
-                                erapurava@gmail.com
+                                vrakscloud@outlook.com
                             </a>
                         </div>
                     </section>

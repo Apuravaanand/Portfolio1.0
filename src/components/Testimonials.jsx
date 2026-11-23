@@ -9,34 +9,31 @@ import client3 from "../assets/profile1.jpg";
 const testimonials = [
     {
         image: client1,
-        name: "Sophia Carter",
+        name: "Gurvinder Singh",
         occupation: "Founder • SaaS Startup",
-        note: "The project was delivered on time with clean architecture, excellent communication, and a strong focus on performance.",
+        note: "The project was delivered on time with clean architecture, excellent communication.",
     },
     {
         image: client2,
-        name: "Daniel Morgan",
-        occupation: "CEO • Digital Agency",
-        note: "A reliable development partner who understands both technical requirements and business goals.",
+        name: "Sadanand Deori",
+        occupation: "CEO • Deori Stores",
+        note: "A reliable  partner who understands technical requirements goals.",
     },
     {
         image: client3,
-        name: "Emily Johnson",
+        name: "Delilah",
         occupation: "Product Manager",
-        note: "From planning to deployment, every milestone was handled professionally. The application was scalable, fast, and easy to maintain.",
+        note: "From planning to deployment, every milestone was handled professionally.",
     },
 ];
 
 export default function Testimonials() {
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="p-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-[0.25em]">
-                        Testimonials
-                    </span>
 
                     <h2 className="mt-5 text-4xl md:text-6xl font-black text-gray-900">
                         Trusted by Clients &
@@ -59,7 +56,7 @@ export default function Testimonials() {
                         >
                             <Quote
                                 size={42}
-                                className="text-green-500 opacity-20 mb-6"
+                                className="text-green-900 opacity-20 mb-6"
                             />
 
                             <p className="text-gray-600 leading-8 text-[15px]">
