@@ -64,7 +64,7 @@ export default function Navbar() {
                 <motion.button
                     onClick={() => setIsOpen(!isOpen)}
                     whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-black border border-white/20 rounded-full flex items-center justify-center text-white shadow-2xl relative"
+                    className="w-14 h-14 bg-white border-black rounded-full flex items-center justify-center text-green-300 relative"
                 >
                     <AnimatePresence mode="wait">
                         {isOpen ? <X key="close" size={22} /> : <Menu key="open" size={22} />}

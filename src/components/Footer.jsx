@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Mail, Phone, MapPin, MessageSquare, Briefcase, Instagram } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin, MessageSquare, Briefcase, Instagram, Twitter } from "lucide-react";
 import { CgCommunity } from "react-icons/cg";
 import { FaDiscord } from "react-icons/fa";
 
@@ -7,6 +7,7 @@ export default function Footer() {
     const instagramUrl = "https://www.instagram.com/vraks.cloud/";
     const linkedinUrl = "https://www.linkedin.com/company/vraks/home/?viewAsMember=true";
     const discordUrl = "https://discord.com/invite/hthSU6nT";
+    const twitterurl = "https://x.com/VraksCloud";
     return (
         <motion.footer
             initial={{ opacity: 0 }}
@@ -106,6 +107,15 @@ export default function Footer() {
                             className="text-gray-200 hover:text-green-500 transition hover:scale-110"
                         >
                             <Linkedin size={22} />
+                        </a>
+                        <a
+                            href={twitterurl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            className="text-gray-200 hover:text-green-500 transition hover:scale-110"
+                        >
+                            <Twitter size={22} />
                         </a>
 
                         <a
